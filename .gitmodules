@@ -1,0 +1,3 @@
+[submodule "kvantum"]
+	path = kvantum
+	url = https://github.com/catppuccin/kvantum.git
