@@ -7,6 +7,8 @@ Applied on 2026-08-02 for the KDE Plasma user session on CachyOS.
 - User fonts: `~/.local/share/fonts/emoeem-fontconfig/`
 - Fontconfig: `~/.config/fontconfig/fonts.conf`
 - KDE fonts: `~/.config/kdeglobals`
+- GTK application fonts: `~/.config/gtk-3.0/settings.ini` and
+  `~/.config/gtk-4.0/settings.ini`
 
 No `/etc/fonts`, pacman database, repository, bootloader, or display-manager
 configuration was changed.
@@ -17,6 +19,7 @@ configuration was changed.
 - LXGW ZhenKai GB 0.825 (upstream GitHub release)
 - LXGW WenKai GB Screen 1.520 (upstream GitHub release; configured as the
   fallback for the upstream `LXGW WenKai Screen` name)
+- LXGW WenKai TC 1.522 (upstream GitHub release)
 - ComicShannsMono Nerd Font 3.4.0 (Arch `otf-comicshanns-nerd` package contents)
 - Maple Mono Normal NF CN 7.9 (available weights extracted from the upstream
   release archive)
@@ -32,7 +35,13 @@ subpixel rendering, the default LCD filter, disables embedded bitmaps except
 for Noto Color Emoji.
 
 KDE's general, menu, toolbar, small-text, and active-title fonts use MiSans;
-its fixed-width font uses ComicShannsMono Nerd Font.
+its fixed-width font uses Maple Mono Normal NF CN. GTK 3/4 applications,
+including Chrome's Linux UI, use `MiSans, Bold 10`.
+
+Common requested families are strongly mapped: Arial, Helvetica, Microsoft
+YaHei, and 微软雅黑 map to MiSans; SimSun and 宋体 map to LXGW WenKai GB
+Screen; and Courier New maps to Maple Mono Normal NF CN. Traditional Chinese
+and Japanese sans-serif requests map to LXGW WenKai TC and Noto Sans CJK JP.
 
 ## Verification
 
