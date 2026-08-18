@@ -1,51 +1,155 @@
 {
-  "proxy": "http://agent.baidu.com:8891",
-  "agent": {
-    "expand_terminal_card": false,
-    "expand_edit_card": false
-  },
-  "lsp": {
-    "clangd": {
-      "binary": {
-        "path": "/usr/bin/clangd-20",
-        "arguments": []
-      }
-    }
-  },
-  "agent_servers": {
-    "Codex (ducx)": {
-      "type": "custom",
-      "command": "/root/.nvm/versions/node/v24.18.0/bin/node",
-      "args": [
-        "/root/.local/share/zed/external_agents/registry/npx/codex-acp/node_modules/@agentclientprotocol/codex-acp/dist/index.js"
-      ],
-      "env": {
-        "CODEX_PATH": "/root/.baidu-cx/baidu-cx/bin/ducx",
-        "CODEX_HOME": "/root/.baidu-cx",
-        "DISABLE_DUCX_CLI_UPDATE": "1",
-        "NO_BROWSER": "1"
-      }
+    "edit_predictions": {
+        "mode": "subtle"
     },
-    "Claude Code (ducc)": {
-      "type": "custom",
-      "command": "/root/.nvm/versions/node/v24.18.0/bin/node",
-      "args": [
-        "/root/.local/share/zed/external_agents/registry/npx/claude-acp/node_modules/@agentclientprotocol/claude-agent-acp/dist/index.js"
-      ],
-      "env": {
-        "CLAUDE_CODE_EXECUTABLE": "/root/.baidu-cc/baidu-cc/bin/ducc",
-        "DISABLE_BAIDU_CLAUDE_UPDATE": "1",
-        "NO_BROWSER": "1"
-      }
+    "context_servers": {
+        "serena-context-server": {
+            "enabled": true,
+            "remote": false,
+            "settings": {
+                "python_executable": "/root/venv/bin/python",
+                "remote": true
+            }
+        }
     },
-    "dsh-acp-enhanced": {
-      "type": "custom",
-      "command": "/bin/bash",
-      "args": ["/root/.dsh/profiles/acp-enhanced/node_modules/dsh-acp-enhanced/scripts/dsh-acp-zed.sh"],
-      "env": {
-        "DSH_ACP_PROVIDER": "oneapi_comate",
-        "DSH_ACP_MODEL": "deepseek-V4-Pro"
-      }
+    "markdown_preview_font_size": 14,
+    "ui_font_weight": 400,
+    "auto_update_extensions": {
+        "git-firefly": false
+    },
+    "diff_view_style": "split",
+    "collaboration_panel": {
+        "button": false,
+        "dock": "left"
+    },
+    "git_panel": {
+        "tree_view": true,
+        "dock": "left"
+    },
+    "agent_servers": {
+        "dsh-acp-enhanced": {
+            "favorite_config_option_values": {
+                "agent_preset": [
+                    "liangshen"
+                ],
+                "model": [
+                    "oneapi_comate/DeepSeek-V4-Pro"
+                ]
+            },
+            "type": "registry",
+            "default_config_options": {
+                "agent_preset": "liangshen",
+                "plan_mode": false,
+                "model": "oneapi_comate/DeepSeek-V4-Pro",
+                "reasoning_effort": "high",
+                "permission_preset": "danger-full-access"
+            }
+        },
+        "Claude Code (ducc)": {
+            "type": "registry",
+            "default_config_options": {
+                "effort": "max"
+            }
+        },
+        "Codex (ducx)": {
+            "type": "registry",
+            "default_config_options": {
+                "fast-mode": true,
+                "model": "gpt-5.6-sol",
+                "mode": "agent-full-access"
+            }
+        }
+    },
+    "ssh_connections": [
+        {
+            "host": "devbox",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/root"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root/code/train"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root/code/train/baidu/feed-model"
+                    ]
+                }
+            ],
+            "upload_binary_over_ssh": true
+        }
+    ],
+    "project_panel": {
+        "hide_gitignore": true,
+        "hide_hidden": false,
+        "dock": "left"
+    },
+    "agent": {
+        "sidebar_side": "right",
+        "play_sound_when_agent_done": "when_hidden",
+        "dock": "right",
+        "favorite_models": [],
+        "model_parameters": [],
+        "expand_terminal_card": false,
+        "expand_edit_card": false
+    },
+    "outline_panel": {
+        "dock": "left"
+    },
+    "proxy": "",
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+        "anthropic_retention": false
+    },
+    "session": {
+        "trust_all_worktrees": true
+    },
+    "vim_mode": true,
+    "preview_tabs": {
+        "enabled": true
+    },
+    "minimap": {
+        "show": "never"
+    },
+    "autosave": "on_window_change",
+    "buffer_font_fallbacks": [
+        "Cascadia Code",
+        "consolas",
+        "CamingoCode",
+        "Monaco",
+        "Courier New",
+        "monospace"
+    ],
+    "buffer_font_family": "UbuntuMono Nerd Font",
+    "file_types": {
+        "python": [
+            "*.py"
+        ]
+    },
+    "auto_indent_on_paste": true,
+    "format_on_save": "on",
+    "soft_wrap": "editor_width",
+    "base_keymap": "VSCode",
+    "ui_font_size": 15,
+    "buffer_font_size": 14,
+    "theme": {
+        "mode": "system",
+        "light": "Catppuccin Frappé",
+        "dark": "Catppuccin Mocha"
+    },
+    "auto_install_extensions": {
+        "catppuccin": true,
+        "catppuccin-icons": true,
+        "dockerfile": true,
+        "git-firefly": true,
+        "html": true,
+        "neocmake": true,
+        "serena-context-server": true
     }
-  }
 }
