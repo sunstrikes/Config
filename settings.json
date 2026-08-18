@@ -1,0 +1,51 @@
+{
+  "proxy": "http://agent.baidu.com:8891",
+  "agent": {
+    "expand_terminal_card": false,
+    "expand_edit_card": false
+  },
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "path": "/usr/bin/clangd-20",
+        "arguments": []
+      }
+    }
+  },
+  "agent_servers": {
+    "Codex (ducx)": {
+      "type": "custom",
+      "command": "/root/.nvm/versions/node/v24.18.0/bin/node",
+      "args": [
+        "/root/.local/share/zed/external_agents/registry/npx/codex-acp/node_modules/@agentclientprotocol/codex-acp/dist/index.js"
+      ],
+      "env": {
+        "CODEX_PATH": "/root/.baidu-cx/baidu-cx/bin/ducx",
+        "CODEX_HOME": "/root/.baidu-cx",
+        "DISABLE_DUCX_CLI_UPDATE": "1",
+        "NO_BROWSER": "1"
+      }
+    },
+    "Claude Code (ducc)": {
+      "type": "custom",
+      "command": "/root/.nvm/versions/node/v24.18.0/bin/node",
+      "args": [
+        "/root/.local/share/zed/external_agents/registry/npx/claude-acp/node_modules/@agentclientprotocol/claude-agent-acp/dist/index.js"
+      ],
+      "env": {
+        "CLAUDE_CODE_EXECUTABLE": "/root/.baidu-cc/baidu-cc/bin/ducc",
+        "DISABLE_BAIDU_CLAUDE_UPDATE": "1",
+        "NO_BROWSER": "1"
+      }
+    },
+    "dsh-acp-enhanced": {
+      "type": "custom",
+      "command": "/bin/bash",
+      "args": ["/root/.dsh/profiles/acp-enhanced/node_modules/dsh-acp-enhanced/scripts/dsh-acp-zed.sh"],
+      "env": {
+        "DSH_ACP_PROVIDER": "oneapi_comate",
+        "DSH_ACP_MODEL": "deepseek-V4-Pro"
+      }
+    }
+  }
+}
