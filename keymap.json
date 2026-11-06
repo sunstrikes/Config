@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "context": "AcpThread",
+        "bindings": {
+            "cmd-right": "agent::AddSelectionToThread"
+        }
+    },
+    {
+        "context": "AcpThread",
+        "unbind": {
+            "cmd->": "agent::AddSelectionToThread"
+        }
+    },
+    {
+        "context": "Editor && mode == full",
+        "bindings": {
+            "cmd-right": "agent::AddSelectionToThread"
+        }
+    },
+    {
+        "context": "Editor && mode == full",
+        "unbind": {
+            "cmd->": "agent::AddSelectionToThread"
+        }
+    }
+]

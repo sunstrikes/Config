@@ -1,4 +1,17 @@
 {
+    "icon_theme": {
+        "mode": "system",
+        "light": "Catppuccin Frappé",
+        "dark": "Catppuccin Mocha"
+    },
+    "markdown_preview": {
+        "font_size": 14
+    },
+    "terminal": {
+        "starts_open": true
+    },
+    "agent_ui_font_size": 14,
+    "agent_buffer_font_size": 14,
     "edit_predictions": {
         "mode": "subtle"
     },
@@ -12,12 +25,11 @@
             }
         }
     },
-    "markdown_preview_font_size": 14,
     "ui_font_weight": 400,
     "auto_update_extensions": {
         "git-firefly": false
     },
-    "diff_view_style": "split",
+    "diff_view_style": "unified",
     "collaboration_panel": {
         "button": false,
         "dock": "left"
@@ -27,6 +39,30 @@
         "dock": "left"
     },
     "agent_servers": {
+        "claude-acp": {
+            "default_config_options": {
+                "model": "DeepSeek-V4.1-Flash-baidu-oneapi[1m]",
+                "effort": "high",
+                "mode": "auto"
+            },
+            "type": "registry"
+        },
+        "DeepSeek Harness": {
+            "type": "registry",
+            "default_config_options": {
+                "effort": "high",
+                "agent": "code",
+                "mode": "danger-full-access",
+                "model": "deepseek-official::deepseek-v4-flash"
+            }
+        },
+        "Claude Agent (acp-plus)": {
+            "type": "registry",
+            "default_config_options": {
+                "thinking": "on",
+                "model": "sonnet"
+            }
+        },
         "dsh-acp-enhanced": {
             "favorite_config_option_values": {
                 "agent_preset": [
@@ -38,9 +74,9 @@
             },
             "type": "registry",
             "default_config_options": {
-                "agent_preset": "liangshen",
+                "agent_preset": "code",
                 "plan_mode": false,
-                "model": "oneapi_comate/DeepSeek-V4-Pro",
+                "model": "oneapi_comate/Deepseek-V4-Flash",
                 "reasoning_effort": "high",
                 "permission_preset": "danger-full-access"
             }
@@ -48,14 +84,17 @@
         "Claude Code (ducc)": {
             "type": "registry",
             "default_config_options": {
-                "effort": "max"
+                "mode": "auto",
+                "model": "DeepSeek-V4.1-Flash-baidu-oneapi[1m]",
+                "effort": "high"
             }
         },
         "Codex (ducx)": {
             "type": "registry",
             "default_config_options": {
+                "reasoning_effort": "high",
                 "fast-mode": true,
-                "model": "gpt-5.6-sol",
+                "model": "gpt-6.1-sol",
                 "mode": "agent-full-access"
             }
         }
@@ -67,7 +106,12 @@
             "projects": [
                 {
                     "paths": [
-                        "/root"
+                        "/root/code/baidu/feed-mlarch/sgl"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root/code/baidu/feed-model/pyflux3/./"
                     ]
                 },
                 {
@@ -77,7 +121,22 @@
                 },
                 {
                     "paths": [
+                        "/root/code/train/baidu/feed-gr"
+                    ]
+                },
+                {
+                    "paths": [
                         "/root/code/train/baidu/feed-model"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root/code/train/baidu/feed-model/feedgen-models/./"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root/code/train/baidu/feed-model/pyflux3"
                     ]
                 }
             ],
@@ -85,12 +144,14 @@
         }
     ],
     "project_panel": {
-        "hide_gitignore": true,
+        "hide_gitignore": false,
         "hide_hidden": false,
         "dock": "left"
     },
     "agent": {
-        "sidebar_side": "right",
+        "threads_sidebar": {
+            "position": "right"
+        },
         "play_sound_when_agent_done": "when_hidden",
         "dock": "right",
         "favorite_models": [],
@@ -126,7 +187,7 @@
         "Courier New",
         "monospace"
     ],
-    "buffer_font_family": "UbuntuMono Nerd Font",
+    "buffer_font_family": "UbuntuMono Nerd Font Mono",
     "file_types": {
         "python": [
             "*.py"
@@ -136,7 +197,7 @@
     "format_on_save": "on",
     "soft_wrap": "editor_width",
     "base_keymap": "VSCode",
-    "ui_font_size": 15,
+    "ui_font_size": 14,
     "buffer_font_size": 14,
     "theme": {
         "mode": "system",
@@ -149,7 +210,9 @@
         "dockerfile": true,
         "git-firefly": true,
         "html": true,
+        "log": true,
         "neocmake": true,
-        "serena-context-server": true
+        "serena-context-server": true,
+        "toml": true
     }
 }
